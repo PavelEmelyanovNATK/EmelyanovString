@@ -11,14 +11,13 @@ namespace CustomString {
 		//Размер строки, с учетом '\0'
 		int _size = 0;
 
-		void deleteString() {
-			delete[] _string;
-		}
-
 	public:
 
 		//Функция, расчитывающая размер строки в массиве символов [Практическая 1]
 		static int CharArrLngth(const char* const input);
+
+		//Функция конкатенации двух массивов символов
+		static CusString concat(const char* const a, const char* const b);
 
 		//Стандартный конструктор
 		CusString();

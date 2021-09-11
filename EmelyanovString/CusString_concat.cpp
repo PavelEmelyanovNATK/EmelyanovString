@@ -64,3 +64,30 @@ CusString CusString::operator += (const CusString const& other) {
 
 	return *this;
 }
+
+CusString CusString::concat(const char* const a, const char* const b) {
+
+	//Старый размер строки, без учета '\0'
+	int oldLght = CharArrLngth(a);
+
+	//Новый размер массива, с учётом '\0'
+	int newSize = CharArrLngth(b) + oldLght + 1;
+
+	//Создаем новый массив символов
+	char* tmp_NewString = new char[newSize];
+
+	//Заполням массив исходной строкой
+	for (int i = 0; i < oldLght; i++) {
+		tmp_NewString[i] = a[i];
+	}
+
+	//Дополняем массив входной строкой
+	for (int i = 0; i < CharArrLngth(b); i++) {
+		tmp_NewString[i + oldLght] = b[i];
+	}
+	
+	tmp_NewString[newSize-1] = '\0';
+	CusString OutString = tmp_NewString;
+
+	return OutString;
+}
