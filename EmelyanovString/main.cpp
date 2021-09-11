@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <windows.h>
 #include "CusString.h"
 
 using namespace std;
@@ -8,6 +9,9 @@ using namespace CustomString;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
+
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	
 	CusString string = "тестовая строка";
 	CusString string2 = "дополнительная строка";
@@ -72,7 +76,7 @@ int main()
 
 	//CusString FromStr;
 	//CusString ToStr;
-	//CusString globalInsertingString = "the test string";
+	//CusString globalInsertingString = "это тестовая строка";
 	//cout << "Исходная строка: " << globalInsertingString << endl;
 	//cout << "Введите что заменять: " << endl;
 	//cin >> FromStr;
@@ -84,16 +88,17 @@ int main()
 
 
 
-	//CusString FromStr;
-	//CusString ToStr;
-	//CusString globalInsertingString = "int a very test string";
-	//cout << "Исходная строка: " << globalInsertingString << endl;
-	//cout << "Введите что заменять: " << endl;
-	//cin >> FromStr;
-	//cout << endl;
-	//cout << "Введите НА что заменять: " << endl;
-	//ToStr = "";
-	//cout << "Результат: " << globalInsertingString.replaceAll(FromStr, ToStr) << endl;
+	CusString FromStr;
+	CusString ToStr;
+	CusString globalInsertingString = "Это ещё одна тестовая строка";
+	cout << "Исходная строка: " << globalInsertingString << endl;
+	cout << "Введите что заменять: " << endl;
+	cin >> FromStr;
+	cout << endl;
+	cout << "Введите НА что заменять: " << endl;
+	cin >> ToStr;
+	cout << "Результат: " << globalInsertingString.replaceAll(FromStr, ToStr) << endl;
 
 	//cout << CusString::concat("one", "two");
+
 }
