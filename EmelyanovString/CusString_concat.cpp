@@ -1,6 +1,7 @@
 #include "CusString.h"
 using namespace CustomString;
 
+//Перегрузка оператора сложения (конкатенация) [Практическая 2]
 CusString CusString::operator + (const CusString const& other) {
 
 	//Старый размер строки, без учета '\0'
@@ -65,6 +66,7 @@ CusString CusString::operator += (const CusString const& other) {
 	return *this;
 }
 
+//Функция конкатенации двух массивов символов [Практическая 2]
 CusString CusString::concat(const char* const a, const char* const b) {
 
 	//Старый размер строки, без учета '\0'

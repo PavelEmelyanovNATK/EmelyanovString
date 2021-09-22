@@ -13,6 +13,9 @@ namespace CustomString {
 
 	public:
 
+		//Максимальный размер строки при вводе через cin. Стандартное значение - 1024.
+		static int Buff;
+
 		//Функция, расчитывающая размер строки в массиве символов [Практическая 1]
 		static int CharArrLngth(const char* const input);
 
@@ -80,9 +83,10 @@ namespace CustomString {
 
 		friend istream& operator >> (istream& in, CusString& inStr)
 		{
-			char tmp[1024];
+			char* tmp = new char[Buff];
 			in >> tmp;
 			inStr = tmp;
+			delete[] tmp;
 
 			return in;
 		}

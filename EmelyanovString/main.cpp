@@ -88,17 +88,23 @@ int main()
 
 
 
-	CusString FromStr;
-	CusString ToStr;
-	CusString globalInsertingString = "Это ещё одна тестовая строка";
-	cout << "Исходная строка: " << globalInsertingString << endl;
-	cout << "Введите что заменять: " << endl;
-	cin >> FromStr;
-	cout << endl;
-	cout << "Введите НА что заменять: " << endl;
-	cin >> ToStr;
-	cout << "Результат: " << globalInsertingString.replaceAll(FromStr, ToStr) << endl;
+    //CusString FromStr;
+    //CusString ToStr;
+    //CusString globalInsertingString = "Это ещё одна тестовая строка";
+    //cout << "Исходная строка: " << globalInsertingString << endl;
+    //cout << "Введите что заменять: " << endl;
+    //cin >> FromStr;
+    //cout << endl;
+    //cout << "Введите НА что заменять: " << endl;
+    //cin >> ToStr;
+    //cout << "Результат: " << globalInsertingString.replaceAll(FromStr, ToStr) << endl;
 
 	//cout << CusString::concat("one", "two");
+
+	CusString str1 = "pravopra";
+	CusString str2 = "pravo";
+	cin >> str1;
+
+	cout << str1.findLast(str2);
 
 }

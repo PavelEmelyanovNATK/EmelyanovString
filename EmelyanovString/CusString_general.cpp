@@ -1,6 +1,9 @@
 #include "CusString.h"
 using namespace CustomString;
 
+//Максимальный размер строки при вводе через cin. Стандартное значение - 1024.
+int CusString::Buff = 1024;
+
 //Стандартный конструктор
 CusString::CusString() {}
 
