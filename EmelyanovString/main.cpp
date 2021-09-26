@@ -5,6 +5,17 @@
 using namespace std;
 using namespace CustomString;
 
+bool ReadNumber(int &variable) {
+	int temp;
+	cin >> temp;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(1024, '\n');
+		return false;
+	}
+	variable = temp;
+	return true;
+}
 
 int main()
 {
@@ -30,10 +41,10 @@ int main()
 	//int to = 0;
 	//cout << "Исходная строка: " << string << endl;
 	//cout << "Введите откуда начинать копировать: ";
-	//cin >> from;
-	//cout << "Введите сколько копировать: ";
-	//cin >> to;
-	//cout << endl;
+	//while(!ReadNumber(from));
+	//	cout << "Введите сколько копировать: ";
+	//while (!ReadNumber(to));
+	//	cout << endl;
 	//cout << "Результат копирования: " << string.copy(from, to) << endl;
 
 
@@ -103,8 +114,13 @@ int main()
 
 	CusString str1 = "pravopra";
 	CusString str2 = "pravo";
-	cin >> str1;
+	CusString::ReadLine(str1);
+	CusString::ReadLine(str2);
 
+	//cin >> str1 >> str2;
+	//cout << str1 << endl;
+	//cout << str2 << endl;
+	
 	cout << str1.findLast(str2);
 
 }

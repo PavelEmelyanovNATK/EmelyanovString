@@ -1,9 +1,6 @@
 #include "CusString.h"
 using namespace CustomString;
 
-//Максимальный размер строки при вводе через cin. Стандартное значение - 1024.
-int CusString::Buff = 1024;
-
 //Стандартный конструктор
 CusString::CusString() {}
 
@@ -39,6 +36,14 @@ CusString::CusString(const char const* other) {
 //Деструктор. В деструкторе освобождаем динамическую память, задействованную под массив символов
 CusString::~CusString() {
 	delete[] _string;
+}
+
+//Функция чтения строки из консоли. Читает до символа, соотвествующего размеру буфера.
+void CusString::ReadLine(CusString& str) {
+	char* tmp = new char[str.Buff];
+	cin.getline(tmp, str.Buff);
+	str = tmp;
+	delete[] tmp;
 }
 
 //Перегрузка оператора присваивания

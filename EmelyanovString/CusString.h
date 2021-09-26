@@ -14,13 +14,16 @@ namespace CustomString {
 	public:
 
 		//Максимальный размер строки при вводе через cin. Стандартное значение - 1024.
-		static int Buff;
+	    int Buff = 1024;
 
 		//Функция, расчитывающая размер строки в массиве символов [Практическая 1]
 		static int CharArrLngth(const char* const input);
 
 		//Функция конкатенации двух массивов символов
 		static CusString concat(const char* const a, const char* const b);
+
+		//Функция чтения строки из консоли. Читает до символа, соотвествующего размеру буфера.
+		static void ReadLine(CusString& str);
 
 		//Стандартный конструктор
 		CusString();
@@ -83,7 +86,7 @@ namespace CustomString {
 
 		friend istream& operator >> (istream& in, CusString& inStr)
 		{
-			char* tmp = new char[Buff];
+			char* tmp = new char[inStr.Buff];
 			in >> tmp;
 			inStr = tmp;
 			delete[] tmp;
