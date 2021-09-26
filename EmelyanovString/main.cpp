@@ -112,15 +112,17 @@ int main()
 
 	//cout << CusString::concat("one", "two");
 
-	CusString str1 = "pravopra";
-	CusString str2 = "pravo";
+	CusString str1;
+	CusString str2;
+	CusString str3;
 	CusString::ReadLine(str1);
 	CusString::ReadLine(str2);
+	CusString::ReadLine(str3);
 
-	//cin >> str1 >> str2;
-	//cout << str1 << endl;
-	//cout << str2 << endl;
-	
-	cout << str1.findLast(str2);
+		//cin >> str1 >> str2;
+		//cout << str1 << endl;
+		//cout << str2 << endl;
+
+	cout << str1.replaceAll(str2, str3);
 
 }

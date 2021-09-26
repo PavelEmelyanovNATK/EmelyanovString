@@ -44,6 +44,7 @@ CusString CusString::replaceAll(const CusString& const from, const CusString& co
 		if (currentIdx != -1) {
 			this->remove(currentIdx, from._size - 1);
 			this->insert(currentIdx, to);
+			i += to._size-2;
 		}
 	}
 
