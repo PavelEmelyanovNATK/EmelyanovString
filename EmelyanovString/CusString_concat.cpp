@@ -1,4 +1,5 @@
 #include "CusString.h"
+
 using namespace CustomString;
 
 //Перегрузка оператора сложения (конкатенация) [Практическая 2]

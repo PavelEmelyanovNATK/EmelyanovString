@@ -10,10 +10,11 @@ bool ReadNumber(int &variable) {
 	cin >> temp;
 	if (cin.fail()) {
 		cin.clear();
-		cin.ignore(1024, '\n');
+		cin.ignore(32767, '\n');
 		return false;
 	}
 	variable = temp;
+	cin.ignore(32767, '\n');
 	return true;
 }
 
@@ -23,106 +24,127 @@ int main()
 
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
+
+	/* ----Практическая 1---- */
+	/*
+	char CheckLengthString[1024];
+	cout << "Ведите строку: " << endl;
+	cin >> CheckLengthString;
+	cout << CusString::CharArrLngth(CheckLengthString) << endl;
+
+	/* ----Практическая 2---- */
+	/*
+	char ch_arr1[100];
+	char ch_arr2[100];
+
+	cout << "Ведите строку 1: " << endl;
+	cin >> ch_arr1;
+
+	cout << "Ведите строку 2: " << endl;
+	cin >> ch_arr2;
+
+	cout << CusString::concat(ch_arr1, ch_arr2) << endl;
+	CusString string1 = ch_arr1;
+	CusString string2 = ch_arr2;
+	cout << string1 + string2 << endl;
 	
-	CusString string = "тестовая строка";
-	CusString string2 = "дополнительная строка";
+	/* ----Практическая 3---- */
+	/*
+	CusString string3;
 
-	//cout << string << endl;
-	//cout << string.getLength() << endl;
-	//cout << CusString::CharArrLngth("тестовая строка");
+	cout << "Введите строку: " << endl;
+	CusString::ReadLine(string3);
+	int ind1, lngth1;
 
+	cout << "Откуда копировать: " << endl;
+	while (!ReadNumber(ind1)) {
+		cout << "Откуда копировать: " << endl;
+	}
 
+	cout << "Сколько копировать: " << endl;
+	while (!ReadNumber(lngth1)) {
+		cout << "Сколько копировать: " << endl;
+	}
 
-	//cout << string + " " + string2 << endl;
+	cout << string3.copy(ind1, lngth1) << endl;
 
+	/* ----Практическая 4---- */
+	/*
+	CusString string4;
+	cout << "Введите строку: " << endl;
+	CusString::ReadLine(string4);
+	int ind2, lngth2;
 
+	cout << "Откуда удалять: " << endl;
+	while (!ReadNumber(ind2)) {
+		cout << "Откуда удалять: " << endl;
+	}
 
-	//int from = 0;
-	//int to = 0;
-	//cout << "Исходная строка: " << string << endl;
-	//cout << "Введите откуда начинать копировать: ";
-	//while(!ReadNumber(from));
-	//	cout << "Введите сколько копировать: ";
-	//while (!ReadNumber(to));
-	//	cout << endl;
-	//cout << "Результат копирования: " << string.copy(from, to) << endl;
+	cout << "Сколько удалять: " << endl;
+	while (!ReadNumber(lngth2)) {
+		cout << "Сколько удалять: " << endl;
+	}
 
+	cout << string4.remove(ind2, lngth2) << endl;
 
-	//int from = 0;
-	//int to = 0;
-	//CusString string_for_removing = string2;
-	//cout << "Исходная строка: " << string_for_removing << endl;
-	//cout << "Введите откуда начинать удалять: ";
-	//cin >> from;
-	//cout << "Введите сколько удалять: ";
-	//cin >> to;
-	//cout << endl;
-	//cout << "Результат удаления: " << string_for_removing.remove(from, to) << endl;
+	/* ----Практическая 5---- */
+	/*
+	CusString string5;
+	CusString string6;
+	int ind3;
 
+	cout << "Введите строку: " << endl;
+	CusString::ReadLine(string5);
 
+	cout << "Откуда вставлять: " << endl;
+	while (!ReadNumber(ind3)) {
+		cout << "Откуда вставлять: " << endl;
+	}
 
-	//int from = 0;
-	//CusString what;
-	//CusString string_for_inserting = string2;
-	//cout << "Исходная строка: " << string_for_inserting << endl;
-	//cout << "Введите куда вставлять: ";
-	//cin >> from;
-	//cout << "Введите что вставлять: ";
-	//cin >> what;
-	//cout << endl;
-	//cout << "Результат вставки: " << string_for_inserting.insert(from, what) << endl;
+	cout << "Введите строку: " << endl;
+	CusString::ReadLine(string6);
 
+	cout << string5.insert(ind3, string6) << endl;
 
+	/* ----Практическая 6-7---- */
+	/*
+	CusString string7;
+	CusString string8;
 
-	//cout << "Введите строку: " << endl;
-	//cin >> string;
-	//cout << endl;
-	//cout << "Введите искомый элемент: " << endl;
-	//cin >> string2;
-	//cout << endl;
-	//cout << "Первое вхождение: " << string.findFirst(string2) << endl;
-	//cout << "Последнее вхождение: " << string.findLast(string2) << endl;
+	cout << "Введите строку: " << endl;
+	CusString::ReadLine(string7);
 
+	cout << "Введите искомую часть: " << endl;
+	CusString::ReadLine(string8);
 
+	cout << "Первое вхождение: " << string7.findFirst(string8) << endl;
+	cout << "Последнее вхождение: " << string7.findLast(string8) << endl;
 
-	//CusString FromStr;
-	//CusString ToStr;
-	//CusString globalInsertingString = "это тестовая строка";
-	//cout << "Исходная строка: " << globalInsertingString << endl;
-	//cout << "Введите что заменять: " << endl;
-	//cin >> FromStr;
-	//cout << endl;
-	//cout << "Введите НА что заменять: " << endl;
-	//cin >> ToStr;
-	//cout << "Замена первого вхождения: " << globalInsertingString.replaceFirst(FromStr, ToStr) << endl;
-	//cout << "Замена последнего вхождения: " << globalInsertingString.replaceLast(FromStr, ToStr) << endl;
+	/* ----Практическая 8-9---- */
+	
+	CusString string9;
+	CusString string10;
+	CusString string11;
 
+	cout << "Введите строку: " << endl;
+	CusString::ReadLine(string9);
 
+	cout << "Введите ЧТО заменить: " << endl;
+	CusString::ReadLine(string10);
 
-    //CusString FromStr;
-    //CusString ToStr;
-    //CusString globalInsertingString = "Это ещё одна тестовая строка";
-    //cout << "Исходная строка: " << globalInsertingString << endl;
-    //cout << "Введите что заменять: " << endl;
-    //cin >> FromStr;
-    //cout << endl;
-    //cout << "Введите НА что заменять: " << endl;
-    //cin >> ToStr;
-    //cout << "Результат: " << globalInsertingString.replaceAll(FromStr, ToStr) << endl;
+	cout << "Введите ЧЕМ заменить: " << endl;
+	CusString::ReadLine(string11);
 
-	//cout << CusString::concat("one", "two");
+	CusString temp1 = string9;
+	CusString temp2 = string9;
+	CusString temp3 = string9;
+	cout << "Первое вхождение: " << temp1.replaceFirst(string10,string11) << endl << endl;
+	cout << "Последнее вхождение: " << temp2.replaceLast(string10,string11) << endl << endl;
+	cout << "Все вхождения: " << temp3.replaceAll(string10, string11) << endl << endl;
 
-	CusString str1;
-	CusString str2;
-	CusString str3;
-	CusString::ReadLine(str1);
-	CusString::ReadLine(str2);
-	CusString::ReadLine(str3);
+	/**/
+	system("pause");
+	return 0;
 
-		//cin >> str1 >> str2;
-		//cout << str1 << endl;
-		//cout << str2 << endl;
-
-	cout << str1.replaceAll(str2, str3);
-
+	
 }

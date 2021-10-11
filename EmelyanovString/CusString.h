@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
+
 using namespace std;
 
 namespace CustomString {
 	class CusString
 	{
 		//Динамический массив символов, в котором хранится строка
-		char* _string = new char[] {'\0'};
+		char* _string = new char[1] {'\0'};
 
 		//Размер строки, с учетом '\0'
 		int _size = 0;
